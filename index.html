@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INDUCOR · Estrategia Mercado Libre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Iconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v1.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v8h14v-8"/><path d="M10 21v-5h4v5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
+    <symbol id="i-dollar" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></symbol>
+  </defs>
+</svg>
+
+<div class="stage intro" id="stage" data-theme="dark">
+
+  <!-- Formas decorativas que cambian de lugar en cada diapositiva -->
+  <div class="shapes" aria-hidden="true">
+    <span class="shape shape-a"></span>
+  </div>
+
+  <header class="brand-bar">
+    <div class="brand" id="brand" data-morph="brand">INDUCOR<i class="dot"></i></div>
+    <div class="brand-tag">Plan de marketing · Mercado Libre</div>
+  </header>
+
+  <main class="slides">
+
+    <!-- 1 · PORTADA -->
+    <section class="slide cover" data-theme="dark">
+      <div class="cover-left">
+        <div class="inst in" style="--d:0"><img src="img/logo-leibnitz.png" alt="Instituto Leibnitz"></div>
+        <p class="kicker in" style="--d:1">Práctica Profesionalizante I · Plan de marketing</p>
+        <h1 class="cover-title" data-morph="brand">INDUCOR<i class="dot"></i></h1>
+        <p class="cover-sub in" style="--d:2">Estrategia digital <b>e-commerce</b><br>en <span class="hl">Mercado Libre</span></p>
+        <div class="cover-meta in" style="--d:4">
+          <div><small>Profesora</small><strong>Cecilia Burello</strong></div>
+          <div><small>Alumnos</small><strong>Angiolini, Benjamin · Chiabrando, Dana · Gómez, Mateo<br>Mancilla, Belen · Petitti, Luciano</strong></div>
+        </div>
+      </div>
+      <div class="cover-right">
+        <div class="pcard p1 in" style="--d:3"><figure class="ph stock "><img src="img/inducor/decoracion.jpg" alt="Decoración" onload="if(this.src.includes('/inducor/'))this.parentNode.classList.remove('stock')" onerror="this.onerror=null;this.src='img/fotos/decoracion.webp'"></figure><span><img class="ic3" src="img/icons/image.png" alt="">Decoración</span></div>
+        <div class="pcard p2 in" style="--d:5"><figure class="ph stock "><img src="img/inducor/herreria.jpg" alt="Herrería" onload="if(this.src.includes('/inducor/'))this.parentNode.classList.remove('stock')" onerror="this.onerror=null;this.src='img/fotos/herreria.jpg'"></figure><span><img class="ic3" src="img/icons/tools.png" alt="">Herrería</span></div>
+        <div class="pcard p3 in" style="--d:7"><figure class="ph stock "><img src="img/inducor/envio.jpg" alt="Envío nacional" onload="if(this.src.includes('/inducor/'))this.parentNode.classList.remove('stock')" onerror="this.onerror=null;this.src='img/fotos/envio.jpg'"></figure><span><img class="ic3" src="img/icons/truck.png" alt="">Envío nacional</span></div>
+      </div>
+    </section>
+
+    <!-- 2 · DIAGNÓSTICO -->
+    <section class="slide diag" data-theme="light">
+      <div class="head">
+        <span class="eyebrow in">01 · Marca y diagnóstico</span>
+        <h2 class="in" style="--d:1">El punto de partida</h2>
+      </div>
+      <div class="diag-grid">
+        <div class="store-card in" style="--d:2">
+          <div class="store-head">
+            <span class="ibox"><img class="ic3" src="img/icons/store.png" alt=""></span>
+            <div><strong>Tienda histórica</strong><small>Mercado Libre</small></div>
+          </div>
+          <div class="years">
+            <div class="y-wrap"><span class="y-old">4</span><span class="y-new">0</span></div>
+            <small>años de trayectoria<br>y posicionamiento</small>
+          </div>
+          <ul class="lost-list">
+            <li style="--i:0"><span class="mk"><svg class="ic ok"><use href="#i-check"/></svg><svg class="ic ko"><use href="#i-x"/></svg></span>Historial de ventas</li>
+            <li style="--i:1"><span class="mk"><svg class="ic ok"><use href="#i-check"/></svg><svg class="ic ko"><use href="#i-x"/></svg></span>Reputación</li>
+            <li style="--i:2"><span class="mk"><svg class="ic ok"><use href="#i-check"/></svg><svg class="ic ko"><use href="#i-x"/></svg></span>Catálogo activo</li>
+          </ul>
+          <div class="stamp">Dada de baja</div>
+        </div>
+        <div class="diag-text">
+          <p class="lead in" style="--d:3">Línea consolidada de <b>herrería y decoración</b> con alta demanda a nivel nacional.</p>
+          <div class="in" style="--d:4"><figure class="ph stock wide"><img src="img/inducor/herreria-deco.jpg" alt="Herrería y decoración" onload="if(this.src.includes('/inducor/'))this.parentNode.classList.remove('stock')" onerror="this.onerror=null;this.src='img/fotos/herreria-deco.jpg'"></figure></div>
+          <p class="f" data-at="1">Un inconveniente técnico/administrativo desvinculó la tienda: <b>pérdida total</b> del historial, la reputación y el catálogo.</p>
+          <div class="callout f" data-at="2">
+            <span>El desafío</span>
+            Reactivar con urgencia el canal nacional <b>sin descuidar la atención personalizada</b> de la marca.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · OBJETIVOS -->
+    <section class="slide objetivos" data-theme="dark">
+      <div class="head">
+        <span class="eyebrow in">02 · Objetivos</span>
+        <h2 class="in" style="--d:1">Qué buscamos lograr</h2>
+      </div>
+      <div class="obj-grid">
+        <article class="obj in" style="--d:2"><b>01</b><img class="ic3" src="img/icons/store.png" alt=""><h3>Reactivar</h3><p>el canal nacional con una nueva tienda operativa.</p><i></i></article>
+        <article class="obj in" style="--d:3"><b>02</b><img class="ic3" src="img/icons/zap.png" alt=""><h3>Vender rápido</h3><p>con los 20 productos de mayor rotación.</p><i></i></article>
+        <article class="obj in" style="--d:4"><b>03</b><img class="ic3" src="img/icons/shield.png" alt=""><h3>Generar confianza</h3><p>con publicaciones claras, fichas completas y buenas fotos.</p><i></i></article>
+        <article class="obj in" style="--d:5"><b>04</b><img class="ic3" src="img/icons/globe.png" alt=""><h3>Ampliar alcance</h3><p>a todo el país, fuera de Villa María y la región.</p><i></i></article>
+        <article class="obj in" style="--d:6"><b>05</b><img class="ic3" src="img/icons/trend.png" alt=""><h3>Recuperar</h3><p>posicionamiento orgánico, reputación y métricas.</p><i></i></article>
+      </div>
+    </section>
+
+    <!-- 4 · ACCIONES -->
+    <section class="slide acciones" data-theme="light">
+      <div class="head">
+        <span class="eyebrow in">03 · Desarrollo de la estrategia</span>
+        <h2 class="in" style="--d:1">La estrategia en 5 acciones</h2>
+      </div>
+      <div class="stepper">
+        <div class="track"><span class="track-fill"></span></div>
+        <div class="st" data-at="1">
+          <div class="node">01</div>
+          <div class="st-body">
+            <div class="st-visual"><img class="ic3" src="img/icons/store.png" alt=""></div>
+            <h4>Nueva cuenta</h4>
+            <p>Alta bajo otra firma: datos fiscales, Mercado Pago y logística de despachos.</p>
+          </div>
+        </div>
+        <div class="st" data-at="2">
+          <div class="node">02</div>
+          <div class="st-body">
+            <div class="st-visual"><span class="bignum" data-morph="n20">20</span></div>
+            <h4>Catálogo estratégico</h4>
+            <p>Productos de deco y herrería con mayor rotación y volumen histórico.</p>
+          </div>
+        </div>
+        <div class="st" data-at="3">
+          <div class="node">03</div>
+          <div class="st-body">
+            <div class="st-visual"><span class="bignum" data-morph="n60">60</span></div>
+            <h4>Fotos en planta (aprox.)</h4>
+            <p>Producción presencial en los sectores de deco y herrería.</p>
+          </div>
+        </div>
+        <div class="st" data-at="4">
+          <div class="node">04</div>
+          <div class="st-body">
+            <div class="st-visual"><img class="ic3" src="img/icons/upload.png" alt=""></div>
+            <h4>Carga y publicación</h4>
+            <p>Títulos con palabras clave, fichas técnicas, precios y variantes.</p>
+          </div>
+        </div>
+        <div class="st" data-at="5">
+          <div class="node">05</div>
+          <div class="st-body">
+            <div class="st-visual"><img class="ic3" src="img/icons/map.png" alt=""></div>
+            <h4>Continuidad</h4>
+            <p>Protocolo para lograr las primeras ventas, activar la reputación y ampliar el catálogo de forma autónoma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · JORNADAS -->
+    <section class="slide jornadas" data-theme="dark">
+      <div class="head">
+        <span class="eyebrow in">04 · Implementación</span>
+        <h2 class="in" style="--d:1">Dos jornadas presenciales</h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-morph="n20">20</b><span>productos estrella</span></div>
+        <div class="stat"><b data-morph="n60">60</b><span>fotos y videos (aprox.)</span></div>
+        <div class="stat in" style="--d:2"><b class="count" data-count="2">0</b><span>jornadas en la empresa</span></div>
+        <div class="stat in" style="--d:3"><b class="count" data-count="1">0</b><span>tienda nueva activa</span></div>
+      </div>
+      <div class="j-grid">
+        <article class="j-card f f-left" data-at="1">
+          <figure class="ph stock side"><img src="img/inducor/jornada1.jpg" alt="Producción de fotos de producto" onload="if(this.src.includes('/inducor/'))this.parentNode.classList.remove('stock')" onerror="this.onerror=null;this.src='img/fotos/jornada1.webp'"></figure><div class="j-body">
+          <span class="pill">Jornada 1</span>
+          <h3>Producción</h3>
+          <ul>
+            <li>Reunión con Paola y equipo</li>
+            <li>Definición del listado de productos estrella</li>
+            <li>Fotos y videos con equipamiento propio</li>
+          </ul></div>
+        </article>
+        <article class="j-card f f-right" data-at="2">
+          <figure class="ph stock side"><img src="img/inducor/jornada2.jpg" alt="Edición y carga en computadora" onload="if(this.src.includes('/inducor/'))this.parentNode.classList.remove('stock')" onerror="this.onerror=null;this.src='img/fotos/jornada2.jpg'"></figure><div class="j-body">
+          <span class="pill">Jornada 2</span>
+          <h3>Edición y carga</h3>
+          <ul>
+            <li>Edición visual con Canva Pro</li>
+            <li>División equitativa del catálogo</li>
+            <li>Revisión de precios, envíos y publicación activa</li>
+          </ul></div>
+        </article>
+      </div>
+      <div class="j-strip f" data-at="3">
+        <div><b>Público</b> Consumidor final de todo el país: decoración, hogar y herrería con envío a domicilio.</div>
+        <div><b>Recursos</b> Celulares, notebooks, stock físico, internet y Canva.</div>
+      </div>
+    </section>
+
+    <!-- 6 · RECORRIDO -->
+    <section class="slide recorrido" data-theme="light">
+      <div class="head">
+        <span class="eyebrow in">05 · Acciones de la estrategia</span>
+        <h2 class="in" style="--d:1">El recorrido buscado en el canal</h2>
+      </div>
+      <div class="journey">
+        <div class="rider"><img class="ic3" src="img/icons/cart.png" alt="">Comprador</div>
+        <div class="chev" data-at="1" style="--h:300px">
+          <img class="ic3" src="img/icons/search.png" alt=""><h3>Visibilidad</h3><p>Publicaciones optimizadas y fotos claras</p>
+        </div>
+        <div class="chev" data-at="2" style="--h:270px">
+          <img class="ic3" src="img/icons/shield.png" alt=""><h3>Confianza</h3><p>Ficha técnica completa y reputación en construcción</p>
+        </div>
+        <div class="chev" data-at="3" style="--h:240px">
+          <img class="ic3" src="img/icons/chat.png" alt=""><h3>Consulta</h3><p>Consulta preventiva del comprador</p>
+        </div>
+        <div class="chev last" data-at="4" style="--h:210px">
+          <img class="ic3" src="img/icons/truck.png" alt=""><h3>Venta</h3><p>Y envío nacional</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · RESULTADOS -->
+    <section class="slide resultados" data-theme="dark">
+      <div class="head">
+        <span class="eyebrow in">06 · Indicadores y KPIs</span>
+        <h2 class="in" style="--d:1">Primeros resultados <small>· últimos 30 días</small></h2>
+      </div>
+      <div class="res-grid">
+        <div class="res-left">
+          <div class="kpis">
+            <div class="kpi in" style="--d:2"><small>Visitas</small><b class="count" data-count="80">0</b></div>
+            <div class="kpi in" style="--d:3"><small>Ventas concretadas</small><b class="count" data-count="1">0</b></div>
+            <div class="kpi in" style="--d:4"><small>Ventas brutas</small><b class="count accent" data-count="123480" data-prefix="$ " data-morph="ticket">$ 0</b></div>
+            <div class="kpi in" style="--d:5"><small>Conversión</small><b><span class="count" data-count="1.3" data-dec="1">0</span> %</b><em>▲ 1,3 puntos</em></div>
+            <div class="kpi in" style="--d:6"><small>Cancelaciones</small><b class="count" data-count="0">0</b></div>
+            <div class="kpi in" style="--d:7"><small>Devoluciones</small><b class="count" data-count="0">0</b></div>
+          </div>
+          <figure class="shot f f-zoom" data-at="2">
+            <img src="img/metricas-ml.jpg" alt="Panel de métricas de Mercado Libre: resumen de desempeño de los últimos 30 días">
+          </figure>
+        </div>
+        <div class="dots-card f f-right" data-at="1">
+          <h3>De <b>80</b> visitas, <b class="o">1</b> venta</h3>
+          <div class="dots" id="dots"></div>
+          <p><i class="lg v"></i>Visita <i class="lg s"></i>Venta · Tasa de conversión 1,3 %</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · ANÁLISIS -->
+    <section class="slide analisis" data-theme="light">
+      <div class="head">
+        <span class="eyebrow in">07 · Análisis</span>
+        <h2 class="in" style="--d:1">Lo que muestran los datos</h2>
+      </div>
+      <div class="an-grid">
+        <div class="an-left">
+          <small class="in" style="--d:2">Primera venta · ticket alto</small>
+          <div class="ticket" data-morph="ticket">$ 123.480</div>
+          <p class="in" style="--d:3">Con una cuenta recién creada, que parte desde cero y sin reputación previa.</p>
+        </div>
+        <ul class="insights">
+          <li class="f f-left" data-at="1"><span class="ibox o"><img class="ic3" src="img/icons/target.png" alt=""></span><div><b>Demanda real</b>Visitas orgánicas y una venta: los 20 productos seleccionados tienen demanda.</div></li>
+          <li class="f f-left" data-at="2"><span class="ibox o"><img class="ic3" src="img/icons/shield.png" alt=""></span><div><b>Confianza</b>Las nuevas fotografías y fichas técnicas generan confianza en el comprador.</div></li>
+          <li class="f f-left" data-at="3"><span class="ibox o"><img class="ic3" src="img/icons/truck.png" alt=""></span><div><b>Operación correcta</b>Despacho cumplido sin cancelaciones ni devoluciones.</div></li>
+        </ul>
+      </div>
+      <div class="banner f" data-at="4">
+        <img class="ic3" src="img/icons/check.png" alt="">
+        <span>INDUCOR vuelve al comercio electrónico nacional con una <b>base ordenada y validada con ventas reales</b>.</span>
+      </div>
+    </section>
+
+    <!-- 9 · SECCIÓN CONTINUIDAD -->
+    <section class="slide seccion" data-theme="dark">
+      <span class="eyebrow in">08 · Continuidad y posicionamiento</span>
+      <h2 class="mega in" style="--d:1">Estrategia de<br><span class="hl">continuidad</span></h2>
+      <p class="in" style="--d:2">Propuesta integral para que INDUCOR sostenga, mida y escale el canal de forma autónoma.</p>
+      <div class="rule">
+        <span class="chip in" style="--d:3;--k:0">Validar</span>
+        <svg class="arrow in" style="--d:4" viewBox="0 0 80 20"><path d="M0 10h70M62 3l8 7-8 7"/></svg>
+        <span class="chip in" style="--d:5;--k:1">Medir</span>
+        <svg class="arrow in" style="--d:6" viewBox="0 0 80 20"><path d="M0 10h70M62 3l8 7-8 7"/></svg>
+        <span class="chip in" style="--d:7;--k:2">Mejorar</span>
+        <svg class="arrow in" style="--d:8" viewBox="0 0 80 20"><path d="M0 10h70M62 3l8 7-8 7"/></svg>
+        <span class="chip in" style="--d:9;--k:3">Crecer</span>
+      </div>
+    </section>
+
+    <!-- 10 · PUBLICACIONES -->
+    <section class="slide publicaciones" data-theme="light">
+      <div class="head">
+        <span class="eyebrow in">09 · Contenidos y estándares</span>
+        <h2 class="in" style="--d:1">Cada publicación, estandarizada</h2>
+      </div>
+      <div class="pub-grid">
+        <div class="pub-cards">
+          <article class="card in" style="--d:2">
+            <h3><img class="ic3" src="img/icons/file.png" alt="">Títulos y fichas</h3>
+            <p>Términos exactos del comprador + material, dimensiones, terminación, instalación, compatibilidades y contenido del paquete.</p>
+          </article>
+          <article class="card in" style="--d:3">
+            <h3><img class="ic3" src="img/icons/camera.png" alt="">Fotografía comercial</h3>
+            <p>Foto principal sobre fondo claro, detalles de terminación, referencias de escala y producto instalado.</p>
+          </article>
+        </div>
+        <div class="phone-wrap in" style="--d:3">
+          <div class="phone">
+            <div class="screen">
+              <video class="clip-video" src="img/inducor/clip.mp4" muted loop playsinline autoplay onerror="this.remove()"></video>
+              <div class="scr scr0" data-only="0">
+                <span class="play"><svg class="ic"><use href="#i-play"/></svg></span>
+                <h4>Clip vertical</h4>
+                <p>Luz natural · cámara estable</p>
+              </div>
+              <div class="scr" data-only="1"><b>1/5</b><h4>Resultado</h4><p>Producto terminado o espacio transformado desde el primer segundo.</p></div>
+              <div class="scr" data-only="2"><b>2/5</b><h4>Necesidad</h4><p>Qué problema resuelve o qué ambiente mejora.</p></div>
+              <div class="scr" data-only="3"><b>3/5</b><h4>Detalles</h4><p>Cámara cerca de materiales, cortes y terminaciones.</p></div>
+              <div class="scr" data-only="4"><b>4/5</b><h4>Medidas y uso</h4><p>Tamaño real, instalación o funcionamiento.</p></div>
+              <div class="scr" data-only="5"><b>5/5</b><h4>Compra</h4><p>Modelos, variantes y qué incluye exactamente.</p></div>
+            </div>
+          </div>
+          <div class="x3"><small>hasta</small><b>x3</b><span>visitas con video</span></div>
+        </div>
+        <div class="guion">
+          <h3 class="in" style="--d:4">Guion de 5 pasos</h3>
+          <ol>
+            <li class="dim" data-at="1"><span>1</span>Resultado</li>
+            <li class="dim" data-at="2"><span>2</span>Necesidad</li>
+            <li class="dim" data-at="3"><span>3</span>Detalles</li>
+            <li class="dim" data-at="4"><span>4</span>Medidas y uso</li>
+            <li class="dim" data-at="5"><span>5</span>Compra</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 · PRECIOS -->
+    <section class="slide precios" data-theme="dark">
+      <div class="head">
+        <span class="eyebrow in">10 · Precios y rentabilidad</span>
+        <h2 class="in" style="--d:1">Precios dinámicos</h2>
+        <p class="sub in" style="--d:2">Foco en la <b>ganancia neta total</b>, por encima del volumen aislado de ventas.</p>
+      </div>
+      <div class="pr-grid">
+        <div class="gauge in" style="--d:3">
+          <span class="g-top">Precio más alto</span>
+          <div class="g-track"></div>
+          <div class="g-floor"><span>Precio mínimo</span></div>
+          <div class="g-nomargin">Sin margen</div>
+          <div class="g-marker">
+            <span class="g-pill"><svg class="ic"><use href="#i-tag"/></svg>Precio</span>
+            <span class="g-delta" data-only="0">Oferta de lanzamiento</span>
+            <span class="g-delta down" data-only="1">−3 % a −5 %</span>
+            <span class="g-delta" data-only="2">Sin cambios</span>
+            <span class="g-delta up" data-only="3">+2 % a +3 %</span>
+          </div>
+        </div>
+        <div class="scen">
+          <article class="sc dim" data-at="0"><h4><img class="ic3" src="img/icons/dollar.png" alt="">Lanzamiento competitivo</h4><p>Costos totales en el simulador oficial → piso mínimo de rentabilidad. Salir con oferta frente a la competencia.</p></article>
+          <article class="sc dim" data-at="1"><h4><img class="ic3" src="img/icons/eye.png" alt="">Visitas sin ventas · baja controlada</h4><p>Bajar entre 3 % y 5 %, siempre dentro del margen aprobado, y sostener para medir.</p></article>
+          <article class="sc dim" data-at="2"><h4><img class="ic3" src="img/icons/search.png" alt="">Casi sin visitas · no es el precio</h4><p>Corregir primero título, fotos, categoría y video.</p></article>
+          <article class="sc dim" data-at="3"><h4><img class="ic3" src="img/icons/trend.png" alt="">Demanda sostenida · suba gradual</h4><p>Subir entre 2 % y 3 %. Si el resultado cae, volver al precio anterior o a un punto intermedio.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 · OPERACIÓN -->
+    <section class="slide operacion" data-theme="light">
+      <div class="head">
+        <span class="eyebrow in">11 · Operación y reputación</span>
+        <h2 class="in" style="--d:1">Regularidad que construye reputación</h2>
+      </div>
+      <div class="op-grid">
+        <div class="op-cards">
+          <article class="row in" style="--d:2"><span class="ibox"><img class="ic3" src="img/icons/box.png" alt=""></span><div><h3>Stock real y atención diaria</h3><p>Solo stock físico disponible y un responsable que responda consultas en el día.</p></div></article>
+          <article class="row in" style="--d:3"><span class="ibox"><img class="ic3" src="img/icons/refresh.png" alt=""></span><div><h3>Mejora desde las consultas</h3><p>Preguntas frecuentes → mejoras en fotos y descripciones.</p></div></article>
+          <article class="row in" style="--d:4"><span class="ibox"><img class="ic3" src="img/icons/truck.png" alt=""></span><div><h3>Embalaje y despacho</h3><p>Proteger piezas, bordes y pintura; cumplir los plazos informados.</p></div></article>
+        </div>
+        <div class="op-right">
+          <div class="thermo in" style="--d:3">
+            <h3>Termómetro de reputación</h3>
+            <div class="t-bar"><i></i><i></i><i></i><i></i><i></i><span class="t-ptr"></span></div>
+            <p>Meta: <b>primeras 10 ventas</b> → reputación en verde</p>
+          </div>
+          <div class="ads f" data-at="1">
+            <h3><img class="ic3" src="img/icons/chart.png" alt="">Product Ads</h3>
+            <ul>
+              <li>Inversión acotada, una vez alcanzadas las primeras 10 ventas (opcional, a cargo de la empresa)</li>
+              <li>Solo en publicaciones completas, con stock y margen validado</li>
+              <li>Revisión semanal: presupuesto a lo que vende rentable</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 · HOJA DE RUTA -->
+    <section class="slide ruta" data-theme="dark" data-hook="roadmap">
+      <div class="head">
+        <span class="eyebrow in">12 · Hoja de ruta recomendada</span>
+        <h2 class="in" style="--d:1">90 días para escalar</h2>
+      </div>
+      <div class="day in" style="--d:2">Día <b id="day">0</b><span>/ 90</span></div>
+      <div class="timeline in" style="--d:3">
+        <div class="tl-bar"><span class="tl-fill"><i></i></span>
+          <em style="left:16.667%"></em><em style="left:33.333%"></em><em style="left:66.667%"></em>
+        </div>
+        <div class="tl-labels"><span style="left:16.667%">15</span><span style="left:33.333%">30</span><span style="left:66.667%">60</span><span style="left:100%">90</span></div>
+      </div>
+      <div class="stages">
+        <article class="stg dim" data-at="1"><small>Etapa 1 · Días 1 a 15</small><h3>Revisión y selección</h3><p>Auditar el catálogo, validar costos en el simulador y definir 3 a 5 productos piloto.</p></article>
+        <article class="stg dim" data-at="2"><small>Etapa 2 · Días 16 a 30</small><h3>Producción y validación</h3><p>Asegurar stock, grabar los Clips y testear embalajes.</p></article>
+        <article class="stg dim" data-at="3"><small>Etapa 3 · Días 31 a 60</small><h3>Medición y precios</h3><p>Monitorear visitas y conversión; aplicar ajustes controlados de precio.</p></article>
+        <article class="stg dim" data-at="4"><small>Etapa 4 · Días 61 a 90</small><h3>Rentabilidad y escala</h3><p>Comparar márgenes, reponer ganadores, escalar pauta y ampliar catálogo.</p></article>
+      </div>
+    </section>
+
+    <!-- 14 · MATRIZ -->
+    <section class="slide matriz" data-theme="light">
+      <div class="head">
+        <span class="eyebrow in">13 · Control semanal</span>
+        <h2 class="in" style="--d:1">Matriz de decisión</h2>
+      </div>
+      <div class="kchips">
+        <span class="in" style="--d:2">Visitas por publicación</span>
+        <span class="in" style="--d:3">Conversión</span>
+        <span class="in" style="--d:4">Contribución por unidad y total</span>
+        <span class="in" style="--d:5">Despachos / reclamos</span>
+        <span class="in" style="--d:6">Reposición de stock</span>
+      </div>
+      <div class="mx">
+        <div class="flip in" data-at="1" style="--d:3"><div class="flip-in">
+          <div class="face front"><h3><img class="ic3" src="img/icons/eye.png" alt="">Pocas visitas</h3><p>El público no encuentra el producto o la portada no atrae clics.</p></div>
+          <div class="face back"><small>Pocas visitas → Acción</small><p>Revisar palabras clave del título, categoría, foto principal y video.</p></div>
+        </div></div>
+        <div class="flip in" data-at="2" style="--d:4"><div class="flip-in">
+          <div class="face front"><h3><img class="ic3" src="img/icons/cart.png" alt="">Visitas sin ventas</h3><p>Atrae interés, pero la propuesta comercial no convence.</p></div>
+          <div class="face back"><small>Visitas sin ventas → Acción</small><p>Revisar precio final, costo de envío, información técnica y señales de confianza.</p></div>
+        </div></div>
+        <div class="flip in" data-at="3" style="--d:5"><div class="flip-in">
+          <div class="face front"><h3><img class="ic3" src="img/icons/dollar.png" alt="">Ventas sin margen</h3><p>El producto rota, pero deja baja o nula rentabilidad.</p></div>
+          <div class="face back"><small>Ventas sin margen → Acción</small><p>Corregir precio, revisar costos de producción, embalaje o presentación.</p></div>
+        </div></div>
+        <div class="flip win in" data-at="4" style="--d:6"><div class="flip-in">
+          <div class="face front"><h3><img class="ic3" src="img/icons/trend.png" alt="">Ventas rentables</h3><p>Alta conversión con contribución económica positiva.</p></div>
+          <div class="face back"><small>Ventas rentables → Acción</small><p>Reponer stock prioritario, invertir en publicidad interna y escalar variantes.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- 15 · CIERRE -->
+    <section class="slide cierre" data-theme="dark">
+      <div class="cl-grid">
+        <div class="cl-left">
+          <span class="eyebrow in">14 · Conclusión general</span>
+          <h2 class="in" style="--d:1">De cara a los <span class="hl">próximos meses</span></h2>
+          <p class="in" style="--d:2">Objetivo principal: <b>sostener el ritmo</b> aplicando la hoja de ruta a 90 días.</p>
+          <p class="in" style="--d:3">Incorporar Clips para multiplicar las visitas y ajustar precios o pauta según el rendimiento de cada publicación.</p>
+        </div>
+        <div class="orbit in" style="--d:2">
+          <div class="o-ring"></div>
+          <div class="o-core"><small>La regla</small><b>de continuidad</b></div>
+          <span class="o-chip" data-pos="0">Validar</span>
+          <span class="o-chip" data-pos="1">Medir</span>
+          <span class="o-chip" data-pos="2">Mejorar</span>
+          <span class="o-chip" data-pos="3">Crecer</span>
+        </div>
+      </div>
+      <div class="thanks" data-at="1">
+        <div class="inst"><img src="img/logo-leibnitz.png" alt="Instituto Leibnitz"></div>
+        <h2>¡Gracias!</h2>
+        <p>Angiolini · Chiabrando · Gómez · Mancilla · Petitti</p>
+        <button class="restart" id="restart">↺ Volver al inicio</button>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="morph-layer" id="morphLayer"></div>
+
+  <footer class="foot">
+    <div class="progress"><span id="bar"></span></div>
+    <div class="counter"><b id="num">01</b> / <span id="total">15</span></div>
+  </footer>
+</div>
+
+<nav class="nav" aria-label="Navegación">
+  <button id="home" title="Volver al inicio (Inicio)">⌂</button>
+  <button id="prev" title="Anterior (←)">‹</button>
+  <button id="next" title="Siguiente (→)">›</button>
+  <button id="fs" title="Pantalla completa (F)">⛶</button>
+</nav>
+
+<script src="js/main.js"></script>
+</body>
+</html>

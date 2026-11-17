@@ -1,0 +1,12 @@
+Fotos propias de INDUCOR (opcional)
+====================================
+Si copias aca tus fotos con estos nombres, reemplazan automaticamente a las
+fotos ilustrativas:
+
+  decoracion.jpg     -> portada, tarjeta Decoracion
+  herreria.jpg       -> portada, tarjeta Herreria
+  envio.jpg          -> portada, tarjeta Envio nacional
+  herreria-deco.jpg  -> diapositiva 2 (diagnostico)
+  jornada1.jpg       -> diapositiva 5, Jornada 1 (produccion)
+  jornada2.jpg       -> diapositiva 5, Jornada 2 (edicion y carga)
+  clip.mp4           -> diapositiva 10, video en el celular
